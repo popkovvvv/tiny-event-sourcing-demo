@@ -6,7 +6,6 @@ import ru.quipy.api.TagCreatedEvent
 import ru.quipy.api.TaskCreatedEvent
 import java.util.*
 
-
 // Commands : takes something -> returns event
 // Here the commands are represented by extension functions, but also can be the class member functions
 

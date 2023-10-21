@@ -52,7 +52,7 @@ data class TagEntity(
 )
 
 /**
- * Demonstrates that the transition functions might be representer by "extension" functions, not only class members functions
+ * Demonstrates that the transition functions might be represented by "extension" functions, not only class members functions
  */
 @StateTransitionFunc
 fun ProjectAggregateState.tagAssignedApply(event: TagAssignedToTaskEvent) {
