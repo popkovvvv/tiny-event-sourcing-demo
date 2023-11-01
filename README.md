@@ -49,7 +49,7 @@ As a response you will receive the corresponding event if everything went well:
 Now lets add some Task with name "Task" to the project. Take the projectId from previous response and perform:
 
 ```
-POST http://localhost:8081/projects/823d4576-5e95-4027-bd9e-63b27086256c/tasks/Task 
+POST http://localhost:8080/projects/823d4576-5e95-4027-bd9e-63b27086256c/tasks/Task 
 ```
 
 You will receive corresponding `TASK_CREATED_EVENT` if everything ok
@@ -57,7 +57,7 @@ You will receive corresponding `TASK_CREATED_EVENT` if everything ok
 Now lets fetch the current state of the ProjectAggregate:
 
 ```
-GET http://localhost:8081/projects/823d4576-5e95-4027-bd9e-63b27086256c
+GET http://localhost:8080/projects/823d4576-5e95-4027-bd9e-63b27086256c
 ```
 
 You will receive something like this:

@@ -8,6 +8,8 @@ const val PROJECT_CREATED_EVENT = "PROJECT_CREATED_EVENT"
 const val TAG_CREATED_EVENT = "TAG_CREATED_EVENT"
 const val TAG_ASSIGNED_TO_TASK_EVENT = "TAG_ASSIGNED_TO_TASK_EVENT"
 const val TASK_CREATED_EVENT = "TASK_CREATED_EVENT"
+const val TAG_REMOVED_EVENT = "TAG_REMOVED_EVENT"
+const val TAG_UNASSIGNED_FROM_TASK_EVENT = "TAG_UNASSIGNED_FROM_TASK_EVENT"
 
 // API
 @DomainEvent(name = PROJECT_CREATED_EVENT)
@@ -51,5 +53,27 @@ class TagAssignedToTaskEvent(
     createdAt: Long = System.currentTimeMillis(),
 ) : Event<ProjectAggregate>(
     name = TAG_ASSIGNED_TO_TASK_EVENT,
+    createdAt = createdAt
+)
+
+@DomainEvent(name = TAG_REMOVED_EVENT)
+class TagRemovedEvent(
+    val projectId: UUID,
+    val tagId: UUID,
+    val tagName: String?,
+    createdAt: Long = System.currentTimeMillis(),
+) : Event<ProjectAggregate>(
+    name = TAG_REMOVED_EVENT,
+    createdAt = createdAt,
+)
+
+@DomainEvent(name = TAG_UNASSIGNED_FROM_TASK_EVENT)
+class TagUnassignedFromTaskEvent(
+    val projectId: UUID,
+    val taskId: UUID,
+    val tagId: UUID,
+    createdAt: Long = System.currentTimeMillis(),
+) : Event<ProjectAggregate>(
+    name = TAG_UNASSIGNED_FROM_TASK_EVENT,
     createdAt = createdAt
 )
